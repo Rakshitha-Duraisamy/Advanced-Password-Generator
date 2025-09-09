@@ -7,40 +7,40 @@ import java.awt.datatransfer.StringSelection;
 
 public class AdvancedPasswordGenerator {
     public static void main(String[] args) {
-        // Frame setup
+        
         JFrame frame = new JFrame("Advanced Password Generator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setLayout(new GridLayout(0, 1, 5, 5));
 
-        // Panel for inputs
+        
         JPanel topPanel = new JPanel();
         JLabel label = new JLabel("Password Length:");
         JTextField lengthField = new JTextField("12", 5);
 
-        // Checkboxes for character sets
+        
         JCheckBox includeUpper = new JCheckBox("Uppercase A-Z", true);
         JCheckBox includeLower = new JCheckBox("Lowercase a-z", true);
         JCheckBox includeNumbers = new JCheckBox("Numbers 0-9", true);
         JCheckBox includeSymbols = new JCheckBox("Symbols !@#$%", true);
 
-        // Generate button
+        
         JButton generateBtn = new JButton("Generate Password");
 
-        // Password output field
+        
         JPasswordField output = new JPasswordField(20);
         output.setEditable(false);
 
-        // Show/Hide toggle
+        
         JCheckBox showPassword = new JCheckBox("Show Password");
 
-        // Copy button
+   
         JButton copyBtn = new JButton("Copy to Clipboard");
 
-        // Strength label
+        
         JLabel strengthLabel = new JLabel("Strength: -");
 
-        // Add components
+        
         topPanel.add(label);
         topPanel.add(lengthField);
         frame.add(topPanel);
@@ -54,7 +54,7 @@ public class AdvancedPasswordGenerator {
         frame.add(copyBtn);
         frame.add(strengthLabel);
 
-        // Generate button action
+        
         generateBtn.addActionListener(e -> {
             int length;
             try {
@@ -99,11 +99,11 @@ public class AdvancedPasswordGenerator {
             JOptionPane.showMessageDialog(frame, "Password copied to clipboard!");
         });
 
-        // Show window
+        
         frame.setVisible(true);
     }
 
-    // Generate password based on user choices
+     choices
     public static String generatePassword(int length, boolean upper, boolean lower, boolean numbers, boolean symbols) {
         String upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lowerChars = "abcdefghijklmnopqrstuvwxyz";
@@ -127,7 +127,7 @@ public class AdvancedPasswordGenerator {
         return sb.toString();
     }
 
-    // Simple password strength checker
+    
     public static String checkStrength(String password) {
         int score = 0;
         if (password.length() >= 8) score++;
